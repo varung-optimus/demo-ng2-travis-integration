@@ -24,7 +24,5 @@ before_script:
 - npm install
 - ng build
 
-script: karma start config/karma.conf.js --single-run
-
 notifications:
   slack: optimusinformation:7XhylGt33hYxi9fTsvtQeiGd
