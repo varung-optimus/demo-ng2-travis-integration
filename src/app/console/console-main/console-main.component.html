@@ -1,0 +1,15 @@
+
+<div>
+<button (click)="dashboardsMenu()">Dashboards</button>
+<button (click)="trendsMenu()">Trends</button>
+<button (click)="intervalStatsMenu()">Interval Statistics</button>
+<button (click)="transactionsMenu()">Transactions</button>
+<button (click)="alertsMenu()">Alerts</button>
+</div>
+<div>
+  <single-column-menu *ngIf="isSingleColumnMenu" [menuName]="menuName" (menuClicked)="onMenuClicked($event)"></single-column-menu>
+  <multi-column-menu *ngIf="isMultiColumnMenu" ></multi-column-menu>
+</div>
+<div>
+  <page-container [pageId]="[pageId]"></page-container>
+</div>

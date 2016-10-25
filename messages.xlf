@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="1d4d05ba23346de786a2fec029363f7853a0e6d5" datatype="html">
+        <source>Dashboards i18n!</source>
+        <target/>
+        <note priority="1" from="description">Console top-level &apos;Dashboards&apos; menu name</note>
+      </trans-unit>
+      <trans-unit id="5ee5de32b8845580d42a7ba8aa378762ddcc9021" datatype="html">
+        <source>Trends i18n!</source>
+        <target/>
+        <note priority="1" from="description">Console top-level &apos;Trends&apos; menu name</note>
+      </trans-unit>
+      <trans-unit id="81c31c995827516c7a5989579734fda1e7cb9b36" datatype="html">
+        <source>Interval Statistics i18n!</source>
+        <target/>
+        <note priority="1" from="description">Console top-level &apos;Interval Statistics&apos; menu name</note>
+      </trans-unit>
+      <trans-unit id="dc58c5f53054b30ff849185c318591da52833f95" datatype="html">
+        <source>Transactions i18n!</source>
+        <target/>
+        <note priority="1" from="description">Console top-level &apos;Transactions&apos; menu name</note>
+      </trans-unit>
+      <trans-unit id="8ad83fbad548a2f3f12a03a949e4fa2b8616cd91" datatype="html">
+        <source>Alerts i18n!</source>
+        <target/>
+        <note priority="1" from="description">Console top-level &apos;Alerts&apos; menu name</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
