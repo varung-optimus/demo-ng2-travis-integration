@@ -1,28 +1,27 @@
 sudo: required
 dist: trusty
-
 language: node_js
 node_js:
-  - "6"
-  - "6.1"
-  - "5.11"
-  - "4.5"
-  - "0.6"
+  - '6'
+  - '4.2'
 
-install:
+addons:
+apt:
+  sources:
+    - google-chrome
+  packages:
+    - google-chrome-stable
+    - google-chrome-beta
+
+before_install:
+  - export CHROME_BIN=chromium-browser
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
-  - wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-  - sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
-  - sudo apt-get update -q
-  - sudo apt-get install -q google-chrome-stable
 
 before_script:
-  - npm install
+- npm install -g angular-cli
+- npm install -g karma
+- npm install
+- ng build
 
-script:
-  - npm run test-single-run
-  - (npm start > /dev/null &) && (npm run protractor)
-
-notifications:
-  slack: optimusinformation:V6INf0bcAimNBTPIQ3lk5tM0
+script: karma start config/karma.conf.js --single-run
