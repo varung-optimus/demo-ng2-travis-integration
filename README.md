@@ -1,6 +1,6 @@
 # InsightIIIRI
 
-[![Build Status](https://travis-ci.org/varung-optimus/demo-ng2-travis-integration.svg?branch=master)](https://travis-ci.org/varung-optimus/demo-ng2-travis-integration
+[![Build Status](https://travis-ci.org/varung-optimus/demo-ng2-travis-integration.svg?branch=master)](https://travis-ci.org/varung-optimus/demo-ng2-travis-integration)
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.16.
 
