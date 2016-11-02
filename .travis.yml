@@ -7,12 +7,11 @@ node_js:
 branches:
   except:
     - /^build-[0-9a-z\-]*/
+script:
+- npm install -g angular-cli
 after_success:
   - git config --global user.email "varun.goel@optimusinfo.com"
   - git config --global user.name "varung-optimus"
   - export GIT_TAG=build-$TRAVIS_BRANCH-$(date -u "+%Y-%m-%d-%H-%M-%S")-$TRAVIS_BUILD_NUMBER
   - git tag $GIT_TAG -a -m "Generated tag from TravisCI build $TRAVIS_BUILD_NUMBER"
   - git push https://varung-optimus:46122d84b2906cbf0ec37dc8c9c269060b974a70@github.com//varung-optimus/demo-ng2-travis-integration $GIT_TAG
-
-script:
-- npm install -g angular-cli
