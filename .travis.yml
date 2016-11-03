@@ -10,16 +10,18 @@ branches:
 script:
 - npm install jquery
 after_success:
-  - if ([ "$TRAVIS_BRANCH" == "master" ]; then
+  - if ([ "$TRAVIS_BRANCH" == "release-" ]; then
   - echo "This will deploy!"
   - echo "Do this too"
   - else
   - echo "This will not deploy!"
   - echo "Thanks!"
   - fi
-  - export MAJOR_VERSION=1
+  - export MAJOR_VERSION=2
+  - export LAST_MINOR_RELEASE=29
+  - export TAG_NUMBER=$TRAVIS_JOB_NUMBER-$LAST_MINOR_RELEASE
   - git config --global user.email $GITHUB_EMAIL
   - git config --global user.name $GITHUB_USER
-  - export GIT_TAG=v$MAJOR_VERSION.$TRAVIS_JOB_NUMBER
+  - export GIT_TAG=v$MAJOR_VERSION.$TAG_NUMBER
   - git tag $GIT_TAG -a -m "Generated tag from TravisCI build $TRAVIS_BUILD_NUMBER on $(date -u "+%Y-%m-%d-%H-%M")-"
   - git push https://$GITHUB_USER:$GITHUB_PASS@github.com//varung-optimus/demo-ng2-travis-integration $GIT_TAG
