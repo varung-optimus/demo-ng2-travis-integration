@@ -10,6 +10,7 @@ branches:
 script:
 - npm install -g angular-cli
 after_success:
+
   - git config --global user.email $GITHUB_EMAIL
   - git config --global user.name $GITHUB_USER
   - echo $GITHUB_EMAIL
