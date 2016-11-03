@@ -18,8 +18,8 @@ after_success:
   - echo "Thanks!"
   - fi
   - export MAJOR_VERSION=2
-  - export LAST_MINOR_RELEASE=29
-  - export TAG_NUMBER=$TRAVIS_JOB_NUMBER-$LAST_MINOR_RELEASE
+  - export LAST_MINOR_RELEASE=31
+  - export TAG_NUMBER=`expr $TRAVIS_BUILD_NUMBER - $LAST_MINOR_RELEASE`
   - git config --global user.email $GITHUB_EMAIL
   - git config --global user.name $GITHUB_USER
   - export GIT_TAG=v$MAJOR_VERSION.$TAG_NUMBER
