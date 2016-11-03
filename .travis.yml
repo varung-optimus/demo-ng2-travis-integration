@@ -13,9 +13,7 @@ after_success:
 
   - git config --global user.email $GITHUB_EMAIL
   - git config --global user.name $GITHUB_USER
-  - echo $GITHUB_EMAIL
-  - echo $GITHUB_USER
-  - echo $TRAVIS_JOB_NUMBER
-  - export GIT_TAG=build-$TRAVIS_BRANCH-$(date -u "+%Y-%m-%d-%H-%M-%S")-$TRAVIS_BUILD_NUMBER
-  - git tag $GIT_TAG -a -m "Generated tag from TravisCI build $TRAVIS_BUILD_NUMBER"
+  - export MAJOR_VERSION=1
+  - export GIT_TAG=v$MAJOR_VERSION.$TRAVIS_JOB_NUMBER
+  - git tag $GIT_TAG -a -m "Generated tag from TravisCI build $TRAVIS_BUILD_NUMBER on $(date -u "+%Y-%m-%d-%H-%M")-"
   - git push https://$GITHUB_USER:$GITHUB_PASS@github.com//varung-optimus/demo-ng2-travis-integration $GIT_TAG
