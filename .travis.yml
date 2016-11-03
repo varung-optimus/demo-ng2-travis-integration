@@ -10,6 +10,10 @@ branches:
 script:
 - npm install -g angular-cli
 after_success:
+  - git config --global user.email $GITHUB_EMAIL
+  - git config --global user.name $GITHUB_USER
+  - echo $GITHUB_EMAIL
+  - echo $GITHUB_USER
   - export GIT_TAG=build-$TRAVIS_BRANCH-$(date -u "+%Y-%m-%d-%H-%M-%S")-$TRAVIS_BUILD_NUMBER
   - git tag $GIT_TAG -a -m "Generated tag from TravisCI build $TRAVIS_BUILD_NUMBER"
-  - git push https://github.com/varung-optimus/demo-ng2-travis-integration $GIT_TAG
+  - git push https://$GITHUB_USER:$GITHUB_PASS0@github.com//varung-optimus/demo-ng2-travis-integration $GIT_TAG
